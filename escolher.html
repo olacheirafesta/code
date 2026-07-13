@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<title>Escolhe como te inscreves · CODE · Event Business School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A1A18;
+    --ink-soft:#4A4641;
+    --muted:#979590;
+    --paper:#FFFFFF;
+    --soft:#F4F4F3;
+    --line:#E8E8E6;
+    --serif:"Playfair Display",Didot,"Times New Roman",serif;
+    --sans:"Montserrat","Helvetica Neue",Arial,sans-serif;
+    --num:"Montserrat","Helvetica Neue",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);font-weight:300;background:var(--ink);color:rgba(255,255,255,.86);min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+
+  .wrap{width:100%;max-width:980px;margin:0 auto;padding:clamp(44px,7vh,88px) clamp(22px,6vw,64px);flex:1;display:flex;flex-direction:column}
+
+  .brand{text-align:center;font-family:var(--num);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:0.22em;color:rgba(255,255,255,.6)}
+
+  .head{text-align:center;margin:clamp(26px,5vh,52px) 0 10px}
+  .head h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,58px);line-height:1.06;letter-spacing:-0.012em;color:#fff}
+  .head h1 .it{font-style:italic;font-weight:400}
+  .sub{text-align:center;font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(17px,1.9vw,22px);color:rgba(255,255,255,.7);max-width:52ch;margin:16px auto clamp(34px,5vh,56px);line-height:1.45}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,28px);align-items:stretch}
+  .opt{border:1px solid rgba(255,255,255,.2);padding:clamp(30px,3.4vw,46px) clamp(26px,3vw,40px);display:flex;flex-direction:column;min-height:380px;border-radius:2px;transition:border-color .25s,background .25s}
+  .opt:hover{border-color:#fff}
+
+  .opt .label{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2vw,21px);color:rgba(255,255,255,.82);margin-bottom:clamp(20px,3vw,30px)}
+  .opt .amt{font-family:var(--num);font-weight:600;font-size:clamp(52px,7.4vw,88px);line-height:.9;letter-spacing:-0.03em;color:#fff}
+  .opt .amt .cur{font-size:.34em;font-weight:600;vertical-align:super;color:rgba(255,255,255,.7);margin-right:2px}
+  .opt .amt .per{font-family:var(--num);font-weight:500;font-size:.19em;letter-spacing:.06em;color:rgba(255,255,255,.6);margin-left:.12em}
+  .opt .subamt{font-family:var(--num);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,.55);margin-top:14px}
+  .opt .note{font-family:var(--sans);font-weight:300;font-size:14px;color:rgba(255,255,255,.68);margin-top:22px;line-height:1.65}
+  .opt .total{font-family:var(--num);font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:16px}
+  .opt .spacer{flex:1}
+  .opt .go{display:inline-block;text-align:center;font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;padding:19px 24px;margin-top:clamp(26px,3.4vw,38px);border:1px solid #fff;color:#fff;text-decoration:none;transition:all .2s}
+  .opt .go:hover{background:#fff;color:var(--ink)}
+
+  /* destaque · a pronto */
+  .opt.solid{background:#fff;border-color:#fff}
+  .opt.solid .label{color:var(--ink)}
+  .opt.solid .amt{color:var(--ink)}
+  .opt.solid .amt .cur{color:var(--muted)}
+  .opt.solid .amt .per{color:var(--muted)}
+  .opt.solid .subamt{color:var(--muted)}
+  .opt.solid .note{color:var(--ink-soft)}
+  .opt.solid .total{color:var(--ink)}
+  .opt.solid .go{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .opt.solid .go:hover{background:transparent;color:var(--ink)}
+  .opt.solid .tagline{color:var(--muted)}
+
+  .tagline{font-family:var(--num);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,.5);margin-bottom:16px}
+
+  .foot{text-align:center;font-family:var(--num);font-size:10.5px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,.5);margin-top:clamp(32px,5vh,52px)}
+  .back{display:block;text-align:center;font-family:var(--num);font-weight:600;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-top:18px;text-decoration:none}
+  .back:hover{color:rgba(255,255,255,.72)}
+
+  @media (max-width:760px){
+    .grid{grid-template-columns:1fr}
+    .opt{min-height:0}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">Event Business School · CODE</div>
+
+    <div class="head">
+      <h1>Escolhe como<span class="it"> te inscreves</span></h1>
+    </div>
+    <p class="sub">O mesmo acesso completo ao CODE: 12 meses, comunidade e todos os bónus. Escolhe o ritmo de pagamento que faz sentido para ti.</p>
+
+    <div class="grid">
+      <div class="opt solid">
+        <p class="tagline">A pronto · poupas 200€</p>
+        <p class="amt"><span class="cur">€</span>1.900</p>
+        <p class="note">Pagas de uma vez e ficas com o programa inteiro, sem mensalidades. Poupas 200€ face às prestações.</p>
+        <div class="spacer"></div>
+        <a class="go" href="https://buy.stripe.com/14AaEZ0qh2e70yY4Fz8N20g" target="_top" rel="noopener" data-link="pronto">Inscrever a pronto</a>
+      </div>
+
+      <div class="opt line">
+        <p class="tagline">A prestações</p>
+        <p class="amt"><span class="cur">€</span>350<span class="per">/mês</span></p>
+        <div class="subamt">× 6 meses</div>
+        <p class="note">Seis mensalidades, com cobrança automática. Acesso imediato a todo o programa desde o primeiro pagamento.</p>
+        <p class="total">Total · 2.100€</p>
+        <div class="spacer"></div>
+        <a class="go" href="https://buy.stripe.com/bJeaEZgpfbOH2H6goh8N20h" target="_top" rel="noopener" data-link="prestacoes">Inscrever a prestações</a>
+      </div>
+    </div>
+
+    <p class="foot">Pagamento seguro via Stripe · Garantia 15 dias · Acesso imediato</p>
+    <a class="back" href="code-v7.html">← Voltar</a>
+  </div>
+</body>
+</html>
